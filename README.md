@@ -35,6 +35,8 @@ An end-to-end computer vision pipeline that detects and counts **humans and cars
 
 ### 1. Target Filtering
 I implemented a class filter to isolate only the targets of interest (Humans and Cars), reducing noise from other VisDrone classes.
+![Raw Visualisation](./visuals/Raw_Visdrone_Dataset_visualization.png)
+![Targeted Visualisation](./visuals/Target_class_visualization.png)
 ### 2. Human Counting Dashboard
 The final output features a real-time dashboard overlaying the total count of unique human targets.
 ![Counting Dashboard](./visuals/counting_dashboard.png)
