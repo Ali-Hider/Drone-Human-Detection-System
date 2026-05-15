@@ -13,7 +13,7 @@ An end-to-end computer vision pipeline that detects and counts **humans and cars
 - Real-time human & car detection from drone/aerial perspective
 - Accurate human count overlay on live output frames
 - BoT-SORT object tracking for multi-frame surveillance
-- Edge AI optimized — achieves **35.08 FPS** (exceeds 30 FPS real-time threshold)
+- Edge AI optimized — achieves **42.19 FPS** (exceeds 30 FPS real-time threshold)
 
 ---
 
@@ -190,13 +190,13 @@ Extends the detection system from a "frame counter" to a "surveillance tool" —
 ## ⚖️ Strengths & Limitations
 
 **Strengths**
-- Exceeds real-time threshold at 35.08 FPS — viable for edge deployment
+- Exceeds real-time threshold at 42.19 FPS — viable for edge deployment
 - Strong car detection (mAP50: 0.705)
 - Robust tracking via BoT-SORT for multi-frame continuity
 - Portable, reproducible pipeline with dynamic path resolution
 
 **Limitations**
-- Pedestrian mAP50 (0.281) is limited by small object size at altitude — a known VisDrone challenge
+- Human mAP50 (0.245) is limited by small object size at altitude — a known VisDrone challenge
 - Counting is per-frame; a dedicated temporal aggregation layer would improve accuracy
 - YOLOv8 Nano trades some accuracy for speed; YOLOv8s/m would improve mAP at the cost of FPS
 
