@@ -13,7 +13,7 @@ An end-to-end computer vision pipeline that detects and counts **humans and cars
 - Real-time human & car detection from drone/aerial perspective
 - Accurate human count overlay on live output frames
 - BoT-SORT object tracking for multi-frame surveillance
-- Edge AI optimized — achieves **42.19 FPS** (exceeds 30 FPS real-time threshold)
+- Edge AI optimized — achieves **33.69 FPS** (exceeds 30 FPS real-time threshold)
 
 ---
 
@@ -23,7 +23,7 @@ An end-to-end computer vision pipeline that detects and counts **humans and cars
 |---|---|
 | Car mAP50 | **0.705** |
 | Combined Human mAP50 | 0.245 |
-| Inference Speed | **42.19 FPS** ✅ Real-time |
+| Inference Speed | **33.69 FPS** ✅ Real-time |
 | Tracker | BoT-SORT (bonus) |
 | Training Environment | Google Colab T4 GPU |
 
@@ -190,7 +190,7 @@ Extends the detection system from a "frame counter" to a "surveillance tool" —
 ## ⚖️ Strengths & Limitations
 
 ### 🌟 Strengths
-- **Real-time Edge Optimization:** By utilizing the YOLOv8 Nano architecture, the system achieves an inference speed of **42.19 FPS**. This exceeds the industry-standard 30 FPS threshold, ensuring the model is viable for deployment on resource-constrained onboard drone hardware.
+- **Real-time Edge Optimization:** By utilizing the YOLOv8 Nano architecture, the system achieves an inference speed of **33.69 FPS**. This exceeds the industry-standard 30 FPS threshold, ensuring the model is viable for deployment on resource-constrained onboard drone hardware.
 - **Robust Target Persistence:** The implementation of **BoT-SORT tracking** allows the system to maintain unique IDs for targets across frames, eliminating double-counting and enabling the monitoring of specific targets even during temporary occlusions.
 - **High-Confidence Vehicle Detection:** The model demonstrates exceptional reliability in car detection (mAP50: 0.705), providing a stable foundation for traffic and vehicle monitoring.
 
