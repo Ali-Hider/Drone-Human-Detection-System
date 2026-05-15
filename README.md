@@ -189,21 +189,24 @@ Extends the detection system from a "frame counter" to a "surveillance tool" —
 
 ## ⚖️ Strengths & Limitations
 
-**Strengths**
-- Exceeds real-time threshold at 42.19 FPS — viable for edge deployment
-- Strong car detection (mAP50: 0.705)
-- Robust tracking via BoT-SORT for multi-frame continuity
-- Portable, reproducible pipeline with dynamic path resolution
+### 🌟 Strengths
+- **Real-time Edge Optimization:** By utilizing the YOLOv8 Nano architecture, the system achieves an inference speed of **42.19 FPS**. This exceeds the industry-standard 30 FPS threshold, ensuring the model is viable for deployment on resource-constrained onboard drone hardware.
+- **Robust Target Persistence:** The implementation of **BoT-SORT tracking** allows the system to maintain unique IDs for targets across frames, eliminating double-counting and enabling the monitoring of specific targets even during temporary occlusions.
+- **High-Confidence Vehicle Detection:** The model demonstrates exceptional reliability in car detection (mAP50: 0.705), providing a stable foundation for traffic and vehicle monitoring.
 
-**Limitations**
-- Human mAP50 (0.245) is limited by small object size at altitude — a known VisDrone challenge
-- Counting is per-frame; a dedicated temporal aggregation layer would improve accuracy
-- YOLOv8 Nano trades some accuracy for speed; YOLOv8s/m would improve mAP at the cost of FPS
+### ⚠️ Limitations
+- **Small Object Detection:** Due to the high altitude of the aerial imagery, pedestrians often occupy a very small pixel area. This leads to a higher rate of False Negatives (missed detections) compared to vehicles.
+- **Crowd Occlusion:** In densely populated scenes, the model occasionally merges two closely standing people into a single bounding box, a common challenge in top-down aerial perspectives.
 
-**Future Improvements**
-- SAHI (Slicing Aided Hyper Inference) for small object detection boost
-- Model upgrade to YOLOv8s with quantization for embedded deployment
-- Temporal human count smoothing across frames using track ID history
+### 🛠️ Engineering Challenges Faced
+- **Environment & Path Wrangling:** The VisDrone Kaggle dataset had a nested directory structure that conflicted with standard YAML configurations. I solved this by implementing a **dynamic absolute-path resolver**, making the pipeline portable across different server environments.
+- **Data Imbalance:** I identified a significant imbalance between the high frequency of vehicles and the fewer human instances. To prevent this from biasing the results, I moved away from global averages and implemented a **Targeted Performance Evaluation**, analyzing the mAP for humans and cars separately.
+
+### 🚀 Future Roadmap
+To further enhance the system's performance, particularly for the minority 'human' classes, I propose the following improvements:
+1. **SAHI (Slicing Aided Hyper Inference):** Implementing SAHI to slice high-resolution images into smaller tiles, significantly increasing the effective resolution and recall for small pedestrian targets.
+2. **Weighted Loss Functions:** Implementing a weighted loss to penalize mistakes on human detections more heavily, forcing the model to prioritize the minority class.
+3. **Temporal Smoothing:** Implementing a temporal aggregation layer to smooth human counts across multiple frames, reducing flicker and increasing counting stability.
 
 ---
 
