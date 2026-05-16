@@ -43,6 +43,7 @@ The final output features a real-time dashboard overlaying the total count of un
 
 ### 3. Object Tracking (Bonus)
 Utilizing BoT-SORT, the system maintains unique IDs for each target across frames, enabling flow analysis and avoiding double-counting.
+
 🎥 **[Watch the Object Tracking Demo here](https://drive.google.com/file/d/1wa5N9_TK6kCG2OdDABqCVZCWTqzgjvSR/view?usp=sharing)**
 
 ### 4. Model Convergence
