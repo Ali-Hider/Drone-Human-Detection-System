@@ -43,7 +43,7 @@ The final output features a real-time dashboard overlaying the total count of un
 
 ### 3. Object Tracking (Bonus)
 Utilizing BoT-SORT, the system maintains unique IDs for each target across frames, enabling flow analysis and avoiding double-counting.
-![Tracking Demo](./visuals/Tracking_video.mp4)
+🎥 **[Watch the Object Tracking Demo here](https://drive.google.com/file/d/1wa5N9_TK6kCG2OdDABqCVZCWTqzgjvSR/view?usp=sharing)**
 
 ### 4. Model Convergence
 The training curves show a consistent decrease in loss and a steady increase in mAP, proving the model converged successfully.
@@ -53,8 +53,7 @@ The training curves show a consistent decrease in loss and a steady increase in 
 
 ## 🎬 Demo Video
 
-▶️ **[Watch the full demo here](YOUR_GOOGLE_DRIVE_LINK)** *(3–5 min walkthrough: dataset → training → detection → tracking)*
-
+▶️ **[Watch the full demo here](https://drive.google.com/file/d/1JCxmBKObFAOfrpTjibiCgegeFmRRFVEM/view?usp=sharing)** 
 ---
 
 ## 🏗️ Pipeline Architecture
@@ -204,7 +203,7 @@ Extends the detection system from a "frame counter" to a "surveillance tool" —
 
 ### 🚀 Future Roadmap
 To further enhance the system's performance, particularly for the minority 'human' classes, I propose the following improvements:
-1. **SAHI (Slicing Aided Hyper Inference):** Implementing SAHI to slice high-resolution images into smaller tiles, significantly increasing the effective resolution and recall for small pedestrian targets.
+1. **SAHI (Slicing Aided Hyper Inference):** Implementing **SAHI** to slice high-resolution images into smaller tiles, significantly increasing the effective resolution and recall for small pedestrian targets.
 2. **Weighted Loss Functions:** Implementing a weighted loss to penalize mistakes on human detections more heavily, forcing the model to prioritize the minority class.
 3. **Temporal Smoothing:** Implementing a temporal aggregation layer to smooth human counts across multiple frames, reducing flicker and increasing counting stability.
 
